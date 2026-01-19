@@ -23,8 +23,11 @@ public class PracticeProblem {
 		if (arr[curRow][curCol].equals("F")) {
 			return noOfMoves;
 		}
+		if (arr[curRow][curCol].equals("V")) {
+			return -1;
+		}
 		String temp = arr[curRow][curCol];
-		arr[curRow][curCol] = "*";
+		arr[curRow][curCol] = "V";
 		int right = minMovesHelper(arr, curRow, curCol + 1, noOfMoves + 1);
 		int up = minMovesHelper(arr, curRow - 1, curCol, noOfMoves + 1);
 		int left = minMovesHelper(arr, curRow, curCol -1, noOfMoves + 1);
@@ -53,8 +56,11 @@ public class PracticeProblem {
 		if (arr[curRow][curCol].equals("*")) {
 			return 0;
 		}
+		if (arr[curRow][curCol].equals("V")) {
+			return 0;
+		}
 		String temp = arr[curRow][curCol];
-		arr[curRow][curCol] = "*";
+		arr[curRow][curCol] = "V";
 		int right = pathsHelper(arr, curRow, curCol + 1);
 		int up = pathsHelper(arr, curRow - 1, curCol);
 		int left = pathsHelper(arr, curRow, curCol -1);
