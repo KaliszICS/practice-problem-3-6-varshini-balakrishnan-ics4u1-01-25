@@ -8,17 +8,20 @@ public class PracticeProblem {
 		int curRow = arr.length - 1;
 		int curCol = 0;
 		int noOfMoves = 0;
+		if (arr[curRow][curCol].equals("*")) {
+			return -1;
+		}
 		return minMovesHelper(arr, curRow, curCol, noOfMoves);
 	}
 	public static int minMovesHelper(String[][] arr, int curRow, int curCol, int noOfMoves) {
 		if (curRow < 0 || curRow >= arr.length || curCol < 0 || curCol >= arr[0].length) {
 			return -1;
 		}
-		if (arr[curRow][curCol].equals("F")) {
-			return noOfMoves;
-		}
 		if (arr[curRow][curCol].equals("*")) {
 			return -1;
+		}
+		if (arr[curRow][curCol].equals("F")) {
+			return noOfMoves;
 		}
 		String temp = arr[curRow][curCol];
 		arr[curRow][curCol] = "*";
