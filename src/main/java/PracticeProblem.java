@@ -17,6 +17,9 @@ public class PracticeProblem {
 		if (arr[curRow][curCol].equals("F")) {
 			return noOfMoves;
 		}
+		if (arr[curRow][curCol].equals("*")) {
+			return -1;
+		}
 		String temp = arr[curRow][curCol];
 		arr[curRow][curCol] = "*";
 		int right = minMovesHelper(arr, curRow, curCol + 1, noOfMoves + 1);
