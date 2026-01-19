@@ -8,7 +8,7 @@ public class PracticeProblem {
 		int curRow = arr.length - 1;
 		int curCol = 0;
 		int noOfMoves = 0;
-		return minMoviesHelper(arr, curRow, curCol, noOfMoves);
+		return minMovesHelper(arr, curRow, curCol, noOfMoves);
 	}
 	public static int minMovesHelper(String[][] arr, int curRow, int curCol, int noOfMoves) {
 		if (curRow < 0 || curRow >= arr.length || curCol < 0 || curCol >- arr[0].length) {
@@ -31,8 +31,8 @@ public class PracticeProblem {
 		if (down != -1 && (min == -1 || down < min)) min = down;
 		return min;
 	}
-	public static int noOfPaths(String[][]arr, int curRow, int curCol) {
-		if (curRow < 0 || curRiw >= arr.length || curCol < 0 || curCol >= arr[0].length) {
+	public static int pathsHelper(String[][]arr, int curRow, int curCol) {
+		if (curRow < 0 || curRow >= arr.length || curCol < 0 || curCol >= arr[0].length) {
 			return 0;
 		}
 		if (arr[curRow][curCol].equals("F")) {
