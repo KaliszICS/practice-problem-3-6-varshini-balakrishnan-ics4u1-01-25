@@ -11,7 +11,7 @@ public class PracticeProblem {
 		return minMovesHelper(arr, curRow, curCol, noOfMoves);
 	}
 	public static int minMovesHelper(String[][] arr, int curRow, int curCol, int noOfMoves) {
-		if (curRow < 0 || curRow >= arr.length || curCol < 0 || curCol >- arr[0].length) {
+		if (curRow < 0 || curRow >= arr.length || curCol < 0 || curCol >= arr[0].length) {
 			return -1;
 		}
 		if (arr[curRow][curCol].equals("F")) {
@@ -31,12 +31,21 @@ public class PracticeProblem {
 		if (down != -1 && (min == -1 || down < min)) min = down;
 		return min;
 	}
+	public static int noOfPaths(String[][] arr) {
+		int curRow = arr.length - 1;
+		int curCol = 0;
+		return pathsHelper(arr, curRow, curCol);
+	}
+
 	public static int pathsHelper(String[][]arr, int curRow, int curCol) {
 		if (curRow < 0 || curRow >= arr.length || curCol < 0 || curCol >= arr[0].length) {
 			return 0;
 		}
 		if (arr[curRow][curCol].equals("F")) {
 			return 1;
+		}
+		if (arr[curRow][curCol].equals("*")) {
+			return 0;
 		}
 		String temp = arr[curRow][curCol];
 		arr[curRow][curCol] = "*";
