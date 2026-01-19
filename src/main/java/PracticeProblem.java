@@ -7,7 +7,7 @@ public class PracticeProblem {
 	public static int searchMazeMoves(String [][] arr) {
 		int curRow = arr.length - 1;
 		int curCol = 0;
-		int no OfMoves = 0;
+		int noOfMoves = 0;
 		return minMoviesHelper(arr, curRow, curCol, noOfMoves);
 	}
 	public static int minMovesHelper(String[][] arr, int curRow, int curCol, int noOfMoves) {
