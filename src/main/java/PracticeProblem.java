@@ -8,9 +8,6 @@ public class PracticeProblem {
 		int curRow = arr.length - 1;
 		int curCol = 0;
 		int noOfMoves = 0;
-		if (arr[curRow][curCol].equals("*")) {
-			return -1;
-		}
 		return minMovesHelper(arr, curRow, curCol, noOfMoves);
 	}
 	public static int minMovesHelper(String[][] arr, int curRow, int curCol, int noOfMoves) {
